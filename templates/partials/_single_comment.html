@@ -1,0 +1,28 @@
+<li id="comment-{{ comment.id }}" style="display: flex; align-items: flex-start; gap: 10px;">
+  <div class="commenterImage" style="flex-shrink: 0;">
+    <img src="{{ comment.comment_author.email | gravatar }}" />
+  </div>
+
+  <div style="flex-grow: 1;">
+    <!-- Displayed comment -->
+    <div class="commentText" id="comment-display-{{ comment.id }}">
+      <div class="comment-content">{{ comment.text }}</div>
+      <div class="comment-meta">
+        <span class="date sub-text">{{ comment.comment_author.name }} • {{ comment.date_posted | time_since }}</span>
+        {% if current_user.is_authenticated and (current_user.id == comment.comment_author.id or current_user.id == 1) %}
+          <a href="#" onclick="enableEdit({{ comment.id }}); return false;">🖉</a>
+          <a href="#" onclick="deleteComment({{ comment.id }}); return false;">✘</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Hidden edit form -->
+    <form id="comment-form-{{ comment.id }}" style="display: none;" onsubmit="submitCommentEdit(event, {{ comment.id }})">
+      <textarea id="edit-comment-{{ comment.id }}" name="text" rows="3" style="width: 100%;">{{ comment.text }}</textarea>
+      <button type="submit" class="btn btn-sm btn-primary">Save</button>
+      <button type="button" onclick="cancelEdit({{ comment.id }})" class="btn btn-sm btn-secondary">Cancel</button>
+    </form>
+  </div>
+</li>
+
+

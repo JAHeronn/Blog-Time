@@ -1,0 +1,44 @@
+{% from 'bootstrap5/form.html' import render_form %}
+{% include "header.html" %}
+
+<header
+  class="masthead"
+  style="background-image: url('../static/assets/img/study3.jpg')"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="page-heading">
+          <!-- h1 changes if creating or editing post -->
+          {% if edit_on %}
+            <h1>Edit Post</h1>
+          {% else %}
+            <h1>New Post</h1>
+          {% endif %}
+          <span class="subheading">Make a blog post now!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="mb-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <script src="https://cdn.tiny.cloud/1/kkz1ah1s11jkqm0y05acq35pwln7wtow0fn9xk1xsrmebqgu/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        {{ render_form(form, novalidate=True) }}
+        <script>
+          tinymce.init({
+            selector: '#{{ form.body.id }}',
+            height: 300,
+            plugins: 'lists link image table code',
+            toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code'
+           });
+        </script>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include "footer.html" %}

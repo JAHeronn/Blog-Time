@@ -1,0 +1,80 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('../static/assets/img/featurebg.jpg')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="page-heading">
+          <h1>Features Overview</h1>
+          <span class="subheading">A concise summary of the app and its purpose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="container mt-5 mb-5">
+            <p>This is a full-stack blog application built using <strong>Python</strong>, <strong>Flask</strong>,
+                <strong>SQLAlchemy</strong>, and <strong>Bootstrap</strong>. It allows users to create and manage blog
+                posts and comments in a secure and user-friendly environment. The interface is responsive and works
+                seamlessly across different devices.</p>
+
+            <h3 class="mt-5">Tech Stack</h3>
+            <ul>
+                <li><strong>Backend:</strong> Python, Flask, SQLAlchemy</li>
+                <li><strong>Frontend:</strong> HTML, CSS, Bootstrap (customised from a template), JavaScript (AJAX for dynamic comment handling)</li>
+                <li><strong>Authentication:</strong> Flask-Login for user sessions and access control</li>
+                <li><strong>Database:</strong> SQLite (using SQLAlchemy as the ORM)</li>
+            </ul>
+
+            <h3 class="mt-5">User Roles & Permissions</h3>
+            <ul>
+                <li><strong>Admin User:</strong> Full control over all content (can edit/delete any user's posts and comments)</li>
+                <li><strong>Regular Users:</strong> Can manage only their own posts and comments</li>
+                <li><strong>Guests:</strong> Can view blog posts and comments but cannot create or modify content</li>
+            </ul>
+
+            <h3 class="mt-5">Blog Post Features</h3>
+            <ul>
+                <li>Create blog posts with a <strong>title</strong>, <strong>subtitle</strong>, <strong>body</strong>, and <strong>background image</strong></li>
+                <li>View blog posts created by any user</li>
+                <li>Edit or delete your own posts</li>
+            </ul>
+
+            <h3 class="mt-5">Commenting System</h3>
+            <ul>
+                <li><strong>AJAX-powered</strong> comment creation, editing, and deletion for an efficient commenting experience without full page reloads</li>
+                <li>Comments are displayed beneath each post</li>
+            </ul>
+
+            <h3 class="mt-5">Authentication & Access Control</h3>
+                <ul>
+                    <li>Users must register and log in to create, edit, or delete posts and comments</li>
+                    <li>Authorisation logic prevents users from modifying content they don’t own</li>
+                    <li>Login errors include wrong password and unregistered email handling</li>
+                    <li>Registration redirects to login if the email is already in use</li>
+                </ul>
+
+            <h3 class="mt-5">Responsive Design</h3>
+                <ul>
+                    <li>Optimised for desktop, tablet, and mobile viewing</li>
+                    <li>Styled with a customised Bootstrap template for a clean and intuitive UI</li>
+                </ul>
+
+            <div class="alert alert-info mt-5" role="alert">
+                <strong>Note:</strong> To maintain the integrity of the demo version, write access is disabled.
+                    This deployed version is read-only. Full functionality (including user roles, post/comment
+                    management, and authentication) is available in the source code.
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include "footer.html" %}
