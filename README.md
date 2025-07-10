@@ -12,3 +12,7 @@ A full-stack blog application demonstrating user authentication, post creation, 
 ## Tech Stack
 - Python, Flask, SQLAlchemy, Bootstrap
 
+
+![Homepage Screenshot](./screenshots/blogtime1.png)
+
+
