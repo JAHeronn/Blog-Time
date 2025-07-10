@@ -9,6 +9,6 @@ A full-stack blog application demonstrating user authentication, post creation, 
 - Admin moderation
 - Responsive UI
 
-## Live Demo
+## Tech Stack
+- Python, Flask, SQLAlchemy, Bootstrap
 
-Check out the deployed version here: https://blog-time.onrender.com
