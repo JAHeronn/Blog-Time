@@ -1,6 +1,6 @@
 # Blog Time
 
-A full-stack blog application demonstrating user authentication, post creation, and commenting, built with Flask, SQLAlchemy, and Bootstrap.
+A full-stack blog application demonstrating user authentication, post creation, and commenting.
 
 ## Features
 
